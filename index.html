@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Share Marketing — Market Content, Generated</title>
+<meta name="description" content="Share Marketing turns any ticker or market idea into ready-to-post captions, ad copy and educational content in seconds.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --white:#FFFFFF;
+    --paper:#FFF7F0;
+    --ink:#1A1A1A;
+    --ink-soft:#5B5650;
+    --orange:#FF6A1A;
+    --orange-deep:#C2410C;
+    --orange-pale:#FFE3CC;
+    --green:#16A34A;
+    --line: rgba(26,26,26,0.09);
+    --radius: 14px;
+    --display: 'Space Grotesk', sans-serif;
+    --body: 'Inter', sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+
+  body{
+    background:var(--white);
+    color:var(--ink);
+    font-family:var(--body);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+
+  :focus-visible{
+    outline:2.5px solid var(--orange-deep);
+    outline-offset:3px;
+  }
+
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  /* ---------- Ticker strip ---------- */
+  .ticker-bar{
+    background:var(--ink);
+    color:var(--paper);
+    overflow:hidden;
+    white-space:nowrap;
+    font-family:var(--mono);
+    font-size:13px;
+    letter-spacing:0.02em;
+    border-bottom:1px solid var(--orange);
+  }
+  .ticker-track{
+    display:inline-flex;
+    animation: scroll-left 32s linear infinite;
+    padding:9px 0;
+  }
+  @keyframes scroll-left{
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-50%); }
+  }
+  .ticker-track span{
+    padding:0 22px;
+    border-right:1px solid rgba(255,255,255,0.15);
+  }
+  .tick-up{color:#5EDB8C;}
+  .tick-down{color:#FF9C7A;}
+
+  /* ---------- Header ---------- */
+  header.site{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(255,255,255,0.88);
+    backdrop-filter: blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 32px;
+    max-width:1180px;
+    margin:0 auto;
+  }
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:var(--display);
+    font-weight:700;
+    font-size:19px;
+    letter-spacing:-0.01em;
+  }
+  .logo-mark{
+    width:30px; height:30px;
+    border-radius:8px;
+    background:linear-gradient(135deg, var(--orange), var(--orange-deep));
+    position:relative;
+    flex-shrink:0;
+  }
+  .logo-mark::after{
+    content:"";
+    position:absolute;
+    left:6px; right:6px; bottom:7px;
+    height:2px;
+    background:var(--white);
+    clip-path: polygon(0% 100%, 20% 100%, 35% 45%, 55% 70%, 75% 20%, 100% 0%, 100% 15%, 78% 32%, 58% 82%, 38% 58%, 22% 100%, 0 100%);
+  }
+  .navlinks{
+    display:flex;
+    gap:32px;
+    list-style:none;
+    font-size:14.5px;
+    font-weight:500;
+  }
+  .navlinks a{
+    text-decoration:none;
+    color:var(--ink-soft);
+    transition:color .15s ease;
+  }
+  .navlinks a:hover{color:var(--orange-deep);}
+  .nav-cta{
+    background:var(--ink);
+    color:var(--white);
+    border:none;
+    padding:10px 20px;
+    border-radius:999px;
+    font-family:var(--body);
+    font-weight:600;
+    font-size:14px;
+    cursor:pointer;
+    transition:background .15s ease, transform .15s ease;
+  }
+  .nav-cta:hover{background:var(--orange-deep); transform:translateY(-1px);}
+  .nav-toggle{display:none;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding:76px 0 60px;
+    background:
+      radial-gradient(circle at 88% 8%, var(--orange-pale) 0%, rgba(255,227,204,0) 55%);
+    position:relative;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap:56px;
+    align-items:start;
+  }
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:var(--mono);
+    font-size:12.5px;
+    color:var(--orange-deep);
+    background:var(--orange-pale);
+    padding:6px 12px;
+    border-radius:999px;
+    font-weight:500;
+    margin-bottom:22px;
+  }
+  .eyebrow .dot{
+    width:6px; height:6px; border-radius:50%;
+    background:var(--orange-deep);
+  }
+  h1{
+    font-family:var(--display);
+    font-size:clamp(34px, 4.6vw, 54px);
+    line-height:1.05;
+    letter-spacing:-0.02em;
+    font-weight:700;
+    margin-bottom:20px;
+  }
+  h1 em{
+    font-style:normal;
+    color:var(--orange-deep);
+    position:relative;
+  }
+  .hero p.lead{
+    font-size:17.5px;
+    color:var(--ink-soft);
+    max-width:480px;
+    margin-bottom:30px;
+  }
+  .hero-actions{
+    display:flex;
+    gap:14px;
+    align-items:center;
+    margin-bottom:34px;
+    flex-wrap:wrap;
+  }
+  .btn-primary{
+    background:var(--orange);
+    color:var(--white);
+    border:none;
+    padding:14px 26px;
+    border-radius:999px;
+    font-weight:600;
+    font-size:15px;
+    cursor:pointer;
+    box-shadow:0 10px 24px -8px rgba(255,106,26,0.55);
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn-primary:hover{
+    transform:translateY(-2px);
+    box-shadow:0 14px 28px -8px rgba(255,106,26,0.65);
+    background:var(--orange-deep);
+  }
+  .btn-ghost{
+    background:transparent;
+    border:1.5px solid var(--line);
+    color:var(--ink);
+    padding:13px 22px;
+    border-radius:999px;
+    font-weight:600;
+    font-size:15px;
+    cursor:pointer;
+    transition:border-color .15s ease, background .15s ease;
+    text-decoration:none;
+    display:inline-block;
+  }
+  .btn-ghost:hover{border-color:var(--orange); background:var(--orange-pale);}
+
+  .trust-row{
+    display:flex;
+    gap:26px;
+    flex-wrap:wrap;
+  }
+  .trust-item{
+    font-size:13px;
+    color:var(--ink-soft);
+  }
+  .trust-item b{
+    display:block;
+    font-family:var(--display);
+    font-size:22px;
+    color:var(--ink);
+    font-weight:700;
+  }
+
+  /* ---------- Generator card (signature element) ---------- */
+  .slip{
+    background:var(--white);
+    border:1.5px solid var(--line);
+    border-radius:20px;
+    box-shadow:0 24px 60px -24px rgba(26,26,26,0.22);
+    overflow:hidden;
+  }
+  .slip-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 22px;
+    background:var(--ink);
+    color:var(--paper);
+  }
+  .slip-head .name{
+    font-family:var(--mono);
+    font-size:13px;
+    letter-spacing:0.03em;
+  }
+  .slip-head .live{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    font-family:var(--mono);
+    font-size:11.5px;
+    color:#5EDB8C;
+  }
+  .live .pulse{
+    width:7px; height:7px; border-radius:50%;
+    background:#5EDB8C;
+    animation:pulse 1.6s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%,100%{opacity:1;}
+    50%{opacity:0.35;}
+  }
+  .slip-body{padding:22px;}
+  .field{margin-bottom:16px;}
+  .field label{
+    display:block;
+    font-size:12px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--ink-soft);
+    margin-bottom:7px;
+  }
+  .field input[type=text], .field select{
+    width:100%;
+    border:1.5px solid var(--line);
+    border-radius:10px;
+    padding:11px 13px;
+    font-family:var(--body);
+    font-size:14.5px;
+    color:var(--ink);
+    background:var(--paper);
+    transition:border-color .15s ease;
+  }
+  .field input[type=text]:focus, .field select:focus{
+    border-color:var(--orange);
+  }
+  .chip-row{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+  }
+  .chip{
+    border:1.5px solid var(--line);
+    background:var(--paper);
+    padding:8px 13px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:500;
+    cursor:pointer;
+    transition:all .15s ease;
+  }
+  .chip.active{
+    background:var(--orange);
+    border-color:var(--orange);
+    color:var(--white);
+  }
+  .generate-btn{
+    width:100%;
+    background:var(--orange);
+    color:var(--white);
+    border:none;
+    padding:14px;
+    border-radius:10px;
+    font-weight:700;
+    font-size:15px;
+    cursor:pointer;
+    margin-top:6px;
+    transition:background .15s ease, transform .1s ease;
+  }
+  .generate-btn:hover{background:var(--orange-deep);}
+  .generate-btn:active{transform:scale(0.99);}
+
+  .output{
+    margin-top:18px;
+    border-top:1.5px dashed var(--line);
+    padding-top:18px;
+  }
+  .output-card{
+    background:var(--paper);
+    border:1.5px solid var(--orange-pale);
+    border-radius:12px;
+    padding:16px;
+    font-size:14.5px;
+    line-height:1.6;
+    color:var(--ink);
+    min-height:88px;
+    white-space:pre-wrap;
+  }
+  .output-card.placeholder{
+    color:var(--ink-soft);
+    font-style:italic;
+  }
+  .output-actions{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:12px;
+  }
+  .copy-btn{
+    background:none;
+    border:1.5px solid var(--line);
+    color:var(--ink);
+    padding:8px 15px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+    transition:border-color .15s ease, background .15s ease;
+  }
+  .copy-btn:hover{border-color:var(--orange); background:var(--orange-pale);}
+  .copy-btn.copied{background:var(--green); border-color:var(--green); color:var(--white);}
+  .char-count{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- Sections ---------- */
+  section{padding:88px 0;}
+  .section-head{
+    max-width:600px;
+    margin-bottom:52px;
+  }
+  .section-eyebrow{
+    font-family:var(--mono);
+    font-size:12.5px;
+    color:var(--orange-deep);
+    font-weight:500;
+    letter-spacing:0.04em;
+    margin-bottom:12px;
+    display:block;
+  }
+  h2{
+    font-family:var(--display);
+    font-size:clamp(26px, 3.2vw, 38px);
+    letter-spacing:-0.015em;
+    font-weight:700;
+    margin-bottom:14px;
+  }
+  .section-head p{
+    color:var(--ink-soft);
+    font-size:16px;
+  }
+
+  .features{background:var(--paper);}
+  .feature-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:24px;
+  }
+  .feature-card{
+    background:var(--white);
+    border:1.5px solid var(--line);
+    border-radius:16px;
+    padding:26px;
+    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  .feature-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 18px 34px -20px rgba(26,26,26,0.25);
+    border-color:var(--orange-pale);
+  }
+  .feature-icon{
+    width:42px; height:42px;
+    border-radius:11px;
+    background:var(--orange-pale);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:16px;
+    font-size:20px;
+  }
+  .feature-card h3{
+    font-family:var(--display);
+    font-size:17.5px;
+    font-weight:600;
+    margin-bottom:8px;
+  }
+  .feature-card p{
+    font-size:14.5px;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- How it works ---------- */
+  .steps{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:0;
+    counter-reset:step;
+    border-top:1.5px solid var(--line);
+  }
+  .step{
+    padding:28px 20px 0 0;
+    border-right:1.5px solid var(--line);
+    position:relative;
+  }
+  .step:last-child{border-right:none;}
+  .step-num{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--orange-deep);
+    background:var(--orange-pale);
+    display:inline-block;
+    padding:3px 9px;
+    border-radius:999px;
+    margin-bottom:14px;
+  }
+  .step h3{
+    font-family:var(--display);
+    font-size:16px;
+    font-weight:600;
+    margin-bottom:8px;
+  }
+  .step p{
+    font-size:13.5px;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- Templates ---------- */
+  .templates{background:var(--ink); color:var(--paper);}
+  .templates .section-head p{color:rgba(255,247,240,0.65);}
+  .templates .section-eyebrow{color:#FF9C5C;}
+  .tpl-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:16px;
+  }
+  .tpl-card{
+    background:rgba(255,255,255,0.04);
+    border:1.5px solid rgba(255,255,255,0.1);
+    border-radius:14px;
+    padding:20px;
+    transition:background .18s ease, border-color .18s ease;
+  }
+  .tpl-card:hover{
+    background:rgba(255,106,26,0.1);
+    border-color:var(--orange);
+  }
+  .tpl-tag{
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--orange);
+    margin-bottom:12px;
+    display:block;
+  }
+  .tpl-card p{
+    font-size:13.5px;
+    line-height:1.55;
+    color:rgba(255,247,240,0.85);
+  }
+
+  /* ---------- CTA ---------- */
+  .cta{
+    text-align:center;
+    padding:100px 0;
+  }
+  .cta h2{margin-bottom:16px;}
+  .cta p{
+    color:var(--ink-soft);
+    max-width:460px;
+    margin:0 auto 30px;
+    font-size:16px;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    border-top:1.5px solid var(--line);
+    padding:44px 0 30px;
+  }
+  .foot-grid{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    flex-wrap:wrap;
+    gap:24px;
+    margin-bottom:34px;
+  }
+  .foot-links{
+    display:flex;
+    gap:40px;
+    flex-wrap:wrap;
+  }
+  .foot-col h4{
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--ink-soft);
+    margin-bottom:12px;
+  }
+  .foot-col a{
+    display:block;
+    font-size:14px;
+    text-decoration:none;
+    color:var(--ink);
+    margin-bottom:9px;
+    transition:color .15s ease;
+  }
+  .foot-col a:hover{color:var(--orange-deep);}
+  .foot-bottom{
+    display:flex;
+    justify-content:space-between;
+    padding-top:24px;
+    border-top:1px solid var(--line);
+    font-size:13px;
+    color:var(--ink-soft);
+    flex-wrap:wrap;
+    gap:10px;
+  }
+
+  /* ---------- Toast ---------- */
+  .toast{
+    position:fixed;
+    bottom:26px;
+    left:50%;
+    transform:translateX(-50%) translateY(20px);
+    background:var(--ink);
+    color:var(--white);
+    padding:12px 22px;
+    border-radius:999px;
+    font-size:14px;
+    font-weight:500;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .25s ease, transform .25s ease;
+    z-index:100;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .toast.show{
+    opacity:1;
+    transform:translateX(-50%) translateY(0);
+  }
+  .toast::before{
+    content:"✓";
+    color:#5EDB8C;
+    font-weight:700;
+  }
+
+  /* ---------- Reveal on scroll ---------- */
+  .reveal{
+    opacity:0;
+    transform:translateY(18px);
+    transition:opacity .6s ease, transform .6s ease;
+  }
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .feature-grid{grid-template-columns:1fr 1fr;}
+    .steps{grid-template-columns:1fr 1fr;}
+    .tpl-grid{grid-template-columns:1fr 1fr;}
+    .step{border-right:none; border-bottom:1.5px solid var(--line); padding-bottom:24px; margin-bottom:20px;}
+  }
+  @media (max-width: 640px){
+    .wrap{padding:0 20px;}
+    .navlinks{
+      position:fixed;
+      top:64px; left:0; right:0;
+      background:var(--white);
+      flex-direction:column;
+      gap:0;
+      border-bottom:1.5px solid var(--line);
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .25s ease;
+      z-index:40;
+    }
+    .navlinks.open{max-height:320px;}
+    .navlinks li{width:100%;}
+    .navlinks a{
+      display:block;
+      padding:16px 20px;
+      border-bottom:1px solid var(--line);
+    }
+    .nav-cta{display:none;}
+    .nav-toggle{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+      background:none;
+      border:none;
+      cursor:pointer;
+      padding:6px;
+    }
+    .nav-toggle span{
+      width:22px; height:2px; background:var(--ink); border-radius:2px;
+    }
+    .feature-grid{grid-template-columns:1fr;}
+    .steps{grid-template-columns:1fr;}
+    .tpl-grid{grid-template-columns:1fr;}
+    .foot-grid{flex-direction:column;}
+  }
+</style>
+</head>
+<body>
+
+<div class="ticker-bar" aria-hidden="true">
+  <div class="ticker-track" id="tickerTrack"></div>
+</div>
+
+<header class="site">
+  <nav class="nav">
+    <div class="logo">
+      <span class="logo-mark"></span>
+      Share Marketing
+    </div>
+    <ul class="navlinks" id="navLinks">
+      <li><a href="#generator">Generator</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#templates">Templates</a></li>
+    </ul>
+    <div style="display:flex; align-items:center; gap:10px;">
+      <button class="nav-cta" onclick="document.getElementById('generator').scrollIntoView()">Start generating</button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow"><span class="dot"></span> AI-assisted market copy</span>
+        <h1>Turn any ticker into a post worth <em>sharing.</em></h1>
+        <p class="lead">Share Marketing writes ready-to-publish captions, ad lines and educational snippets for stocks, IPOs and market updates — so your desk spends less time drafting and more time trading.</p>
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="document.getElementById('generator').scrollIntoView()">Generate your first post</button>
+          <a href="#how" class="btn-ghost">See how it works</a>
+        </div>
+        <div class="trust-row">
+          <div class="trust-item"><b id="statCount">12,480+</b>captions generated</div>
+          <div class="trust-item"><b>6</b>content styles</div>
+          <div class="trust-item"><b>0s</b>wait time</div>
+        </div>
+      </div>
+
+      <div class="slip" id="generator">
+        <div class="slip-head">
+          <span class="name">GENERATOR / ORDER SLIP</span>
+          <span class="live"><span class="pulse"></span> LIVE</span>
+        </div>
+        <div class="slip-body">
+          <div class="field">
+            <label for="ticker">Ticker or topic</label>
+            <input type="text" id="ticker" placeholder="e.g. TCS, NIFTY 50, Gold ETF" maxlength="40">
+          </div>
+          <div class="field">
+            <label>Post style</label>
+            <div class="chip-row" id="styleChips">
+              <button class="chip active" data-style="bullish">Bullish call</button>
+              <button class="chip" data-style="update">Market update</button>
+              <button class="chip" data-style="education">Educational</button>
+              <button class="chip" data-style="ipo">IPO alert</button>
+              <button class="chip" data-style="caution">Risk note</button>
+            </div>
+          </div>
+          <div class="field">
+            <label for="platform">Platform</label>
+            <select id="platform">
+              <option value="twitter">X / Twitter</option>
+              <option value="instagram">Instagram caption</option>
+              <option value="whatsapp">WhatsApp broadcast</option>
+              <option value="linkedin">LinkedIn</option>
+            </select>
+          </div>
+          <button class="generate-btn" id="generateBtn">Generate post</button>
+
+          <div class="output">
+            <div class="output-card placeholder" id="outputCard">Your generated post will appear here. Enter a ticker and hit "Generate post" to try it.</div>
+            <div class="output-actions">
+              <span class="char-count" id="charCount"></span>
+              <button class="copy-btn" id="copyBtn">Copy text</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">WHY DESKS USE IT</span>
+        <h2>Built for people who post about markets daily.</h2>
+        <p>Every output is short, platform-ready, and easy to edit before it goes live.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card reveal">
+          <div class="feature-icon">⚡</div>
+          <h3>Instant drafts</h3>
+          <p>Get a full caption, hashtags and a call-to-action in under a second — no blank page, ever.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">🎯</div>
+          <h3>Five content styles</h3>
+          <p>Bullish calls, neutral updates, educational tips, IPO alerts and risk notes — pick the tone that fits the moment.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">📋</div>
+          <h3>Copy in one tap</h3>
+          <p>Every draft is formatted for its platform and ready to paste straight into your scheduler.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">🔁</div>
+          <h3>Regenerate freely</h3>
+          <p>Not the right angle? Hit generate again for a fresh take on the same ticker, instantly.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">🧩</div>
+          <h3>Platform-aware format</h3>
+          <p>Twitter stays tight, LinkedIn gets context, WhatsApp reads like a broadcast — same idea, right shape.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">🛡️</div>
+          <h3>Built-in risk notes</h3>
+          <p>A dedicated disclaimer style keeps your desk's messaging compliant-minded by default.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">HOW IT WORKS</span>
+        <h2>From ticker to timeline in four steps.</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <span class="step-num">01</span>
+          <h3>Enter the topic</h3>
+          <p>Type a ticker, index or market theme you want to post about.</p>
+        </div>
+        <div class="step reveal">
+          <span class="step-num">02</span>
+          <h3>Pick a style</h3>
+          <p>Choose bullish, update, educational, IPO or risk-note tone.</p>
+        </div>
+        <div class="step reveal">
+          <span class="step-num">03</span>
+          <h3>Choose a platform</h3>
+          <p>Formatting adjusts automatically for X, Instagram, WhatsApp or LinkedIn.</p>
+        </div>
+        <div class="step reveal">
+          <span class="step-num">04</span>
+          <h3>Generate & copy</h3>
+          <p>Review the draft, tweak if needed, and copy it straight to your post.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="templates" id="templates">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">SAMPLE OUTPUT</span>
+        <h2>A taste of what the generator writes.</h2>
+        <p>Real examples pulled from the five available styles.</p>
+      </div>
+      <div class="tpl-grid">
+        <div class="tpl-card reveal">
+          <span class="tpl-tag">BULLISH CALL</span>
+          <p>"RELIANCE holding strong above support. Momentum building for the next leg up. Watching closely. 📈"</p>
+        </div>
+        <div class="tpl-card reveal">
+          <span class="tpl-tag">MARKET UPDATE</span>
+          <p>"NIFTY 50 trades flat in early hours as investors await cues from global markets. Range-bound session expected."</p>
+        </div>
+        <div class="tpl-card reveal">
+          <span class="tpl-tag">EDUCATIONAL</span>
+          <p>"Did you know? A stock split doesn't change a company's value — it just changes how many pieces it's cut into."</p>
+        </div>
+        <div class="tpl-card reveal">
+          <span class="tpl-tag">RISK NOTE</span>
+          <p>"Markets can be volatile. Past performance doesn't guarantee future returns — always size positions responsibly."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap reveal">
+      <h2>Ready to post your next market update?</h2>
+      <p>No sign-up needed to try the generator — it's live above, right now.</p>
+      <button class="btn-primary" onclick="document.getElementById('generator').scrollIntoView()">Try the generator</button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="logo">
+        <span class="logo-mark"></span>
+        Share Marketing
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <h4>Product</h4>
+          <a href="#generator">Generator</a>
+          <a href="#features">Features</a>
+          <a href="#templates">Templates</a>
+        </div>
+        <div class="foot-col">
+          <h4>Company</h4>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="foot-col">
+          <h4>Legal</h4>
+          <a href="#">Disclaimer</a>
+          <a href="#">Privacy</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Share Marketing. All rights reserved.</span>
+      <span>Not investment advice. For marketing use only.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast">Copied to clipboard</div>
+
+<script>
+  // ---------- Ticker tape content ----------
+  const tickerItems = [
+    { t: "NIFTY 50", v: "+0.62%", up:true },
+    { t: "SENSEX", v: "+0.48%", up:true },
+    { t: "RELIANCE", v: "+1.20%", up:true },
+    { t: "TCS", v: "-0.34%", up:false },
+    { t: "HDFC BANK", v: "+0.85%", up:true },
+    { t: "INFY", v: "-0.15%", up:false },
+    { t: "GOLD", v: "+0.22%", up:true },
+    { t: "USD/INR", v: "-0.05%", up:false },
+    { t: "BTC", v: "+2.10%", up:true },
+    { t: "BANK NIFTY", v: "+0.71%", up:true }
+  ];
+  const track = document.getElementById('tickerTrack');
+  function renderTicker(){
+    const html = tickerItems.map(i =>
+      `<span>${i.t} <span class="${i.up ? 'tick-up':'tick-down'}">${i.v} ${i.up ? '▲':'▼'}</span></span>`
+    ).join('');
+    track.innerHTML = html + html; // duplicate for seamless loop
+  }
+  renderTicker();
+
+  // ---------- Mobile nav ----------
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => navLinks.classList.remove('open'));
+  });
+
+  // ---------- Style chip selection ----------
+  let activeStyle = 'bullish';
+  const chips = document.querySelectorAll('#styleChips .chip');
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      chips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      activeStyle = chip.dataset.style;
+    });
+  });
+
+  // ---------- Copy generator ----------
+  const templates = {
+    bullish: [
+      "{T} showing strong momentum today. Buyers firmly in control above key support — could be one to watch. 📈 #StockMarket #{T}",
+      "Breakout alert: {T} pushing past resistance with volume backing the move. Trend looks constructive from here. 🚀 #{T} #Investing",
+      "{T} holding higher lows on the chart — a sign bulls aren't done yet. Keeping this on the radar. 📊 #{T} #StocksToWatch"
+    ],
+    update: [
+      "Market pulse: {T} trading range-bound as investors weigh global cues. Watching for a decisive move either way. #{T} #MarketUpdate",
+      "{T} update — steady session so far, in line with broader market sentiment. No major surprises yet. #{T} #Markets",
+      "Quick check on {T}: consolidating near recent levels as volumes stay moderate ahead of key data this week. #{T}"
+    ],
+    education: [
+      "Quick tip: when evaluating {T}, don't just look at price — check volume, sector trend and broader market context too. 📘 #LearnToInvest",
+      "Did you know? A stock's price alone doesn't tell you if {T} is cheap or expensive — valuation ratios matter. 🎓 #{T} #FinanceBasics",
+      "New to markets? {T} is a good example of why patience beats timing — long-term trends matter more than daily noise. 📚 #{T}"
+    ],
+    ipo: [
+      "IPO Alert 🔔 {T} opens for subscription soon. Here's what to check before you apply: financials, valuation, and use of proceeds. #{T}IPO",
+      "{T} IPO buzz is building. Remember — hype isn't a strategy. Read the fine print before subscribing. 📄 #{T} #IPO",
+      "Heads up: {T} is heading to market. Grey market premium is just noise — fundamentals decide the long game. #{T}IPO"
+    ],
+    caution: [
+      "Reminder: {T} — like all market instruments — carries risk. Past performance never guarantees future returns. Invest responsibly. ⚠️",
+      "Before you act on {T}: markets can be volatile and unpredictable. Please consult a licensed advisor and size positions sensibly. ⚠️",
+      "A quick disclaimer on {T}: this is market commentary, not investment advice. Always do your own research. ⚠️ #RiskManagement"
+    ]
+  };
+
+  const platformWrap = {
+    twitter: (txt) => txt,
+    instagram: (txt) => txt + "\n.\n.\n.\n#StockMarketIndia #Trading #Investing #WealthCreation",
+    whatsapp: (txt, ticker) => `📢 *${ticker} Update*\n\n${txt.replace(/#\S+/g,'').trim()}\n\n_Forward to your network_`,
+    linkedin: (txt, ticker) => `Market Insight — ${ticker}\n\n${txt.replace(/#\S+/g,'').trim()}\n\nWhat's your read on this? Share your thoughts below.`
+  };
+
+  const outputCard = document.getElementById('outputCard');
+  const charCount = document.getElementById('charCount');
+  const generateBtn = document.getElementById('generateBtn');
+  const copyBtn = document.getElementById('copyBtn');
+  const statCount = document.getElementById('statCount');
+  const toast = document.getElementById('toast');
+  let generatedCount = 12480;
+
+  function generatePost(){
+    const rawTicker = document.getElementById('ticker').value.trim();
+    const ticker = rawTicker ? rawTicker.toUpperCase() : 'THE MARKET';
+    const platform = document.getElementById('platform').value;
+
+    const pool = templates[activeStyle];
+    const chosen = pool[Math.floor(Math.random() * pool.length)];
+    let text = chosen.replaceAll('{T}', ticker);
+    text = platformWrap[platform](text, ticker);
+
+    outputCard.textContent = text;
+    outputCard.classList.remove('placeholder');
+    charCount.textContent = text.length + ' characters';
+
+    generatedCount++;
+    statCount.textContent = generatedCount.toLocaleString('en-IN') + '+';
+
+    copyBtn.classList.remove('copied');
+    copyBtn.textContent = 'Copy text';
+  }
+
+  generateBtn.addEventListener('click', generatePost);
+  document.getElementById('ticker').addEventListener('keydown', (e) => {
+    if(e.key === 'Enter'){ e.preventDefault(); generatePost(); }
+  });
+
+  copyBtn.addEventListener('click', () => {
+    const text = outputCard.textContent;
+    if(!text || outputCard.classList.contains('placeholder')) return;
+
+    const fallbackCopy = () => {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try{ document.execCommand('copy'); } catch(e){}
+      document.body.removeChild(ta);
+    };
+
+    if(navigator.clipboard && window.isSecureContext){
+      navigator.clipboard.writeText(text).catch(fallbackCopy);
+    } else {
+      fallbackCopy();
+    }
+
+    copyBtn.textContent = 'Copied ✓';
+    copyBtn.classList.add('copied');
+    showToast('Copied to clipboard');
+    setTimeout(() => {
+      copyBtn.textContent = 'Copy text';
+      copyBtn.classList.remove('copied');
+    }, 2000);
+  });
+
+  function showToast(msg){
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(showToast._t);
+    showToast._t = setTimeout(() => toast.classList.remove('show'), 2200);
+  }
+
+  // ---------- Scroll reveal ----------
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
